@@ -1,6 +1,6 @@
 {
   "name": "easycc-cli",
-  "version": "1.0.1",
+  "version": "1.0.13",
   "description": "easycc的脚手架",
   "main": "index.js",
   "scripts": {
@@ -12,16 +12,18 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/easy261925/easycc-cli"
   },
   "author": "easy261925",
   "license": "ISC",
   "dependencies": {
     "chalk": "^4.1.0",
     "commander": "^6.1.0",
+    "cross-spawn": "^7.0.3",
     "download-git-repo": "^3.0.2",
     "ejs": "^2.7.4",
     "git-clone": "^0.1.0",
+    "git-down-repo": "^2.4.3",
     "glob": "^7.1.6",
     "handlebars": "^4.7.6",
     "inquirer": "^6.5.2",
@@ -33,7 +35,7 @@
     "rimraf": "^3.0.2",
     "wrap-ansi": "^7.0.0"
   },
-  "homepage": "",
+  "homepage": "https://github.com/easy261925/easycc-cli",
   "devDependencies": {},
   "keywords": [
     "cli",

@@ -20,7 +20,8 @@ const glob = require("glob");
 const latestVersion = require("latest-version");
 
 // node.js 子进程
-const spawn = require("child_process").spawn;
+// const spawn = require("child_process").spawn;
+const spawn = require("cross-spawn")
 
 // node.js 命令行环境的 loading效果， 和显示各种状态的图标
 const ora = require("ora");
@@ -57,9 +58,9 @@ async function main() {
   try {
     console.log("检测版本");
     // 检测版本
-    // let isUpate = await checkVersion();
+    let isUpate = await checkVersion();
     // 更新版本
-    // if (isUpate) await updateCli();
+    if (isUpate) await updateCli();
     // 检测路径
     projectRoot = await checkDir();
     // 创建路径
@@ -109,15 +110,15 @@ function updateCli() {
     switch (npmType) {
       case "npm":
         spinner.start();
-        status = spawn("npm.cmd", ["install", "alice-cli", "-g"]);
+        status = spawn("npm", ["install", "easycc-cli", "-g"]);
         break;
       case "cnpm":
         spinner.start();
-        status = spawn("cnpm.cmd", ["install", "alice-cli", "-g"]);
+        status = spawn("cnpm", ["install", "easycc-cli", "-g"]);
         break;
       case "yarn":
         spinner.start();
-        status = spawn("yarn.cmd", ["add", "alice-cli", "-g"]);
+        status = spawn("yarn", ["global", "add", "easycc-cli"]);
         break;
     }
     status.stdout.on("data", data => {
@@ -165,7 +166,7 @@ function checkDir() {
   });
 }
 // 创建路径
-function makeDir (projectRoot) {
+function makeDir(projectRoot) {
   if (projectRoot !== ".") {
     fs.mkdirSync(projectName);
   }
@@ -205,7 +206,7 @@ function selectTemplate() {
  * @param templateName 模板地址
  * @param customizePrompt 模板自定义选项
  */
-function render(projectRoot , templateName, customizePrompt) {
+function render(projectRoot, templateName, customizePrompt) {
   return new Promise(async (resolve, reject) => {
     try {
       let context = {
@@ -237,10 +238,10 @@ function render(projectRoot , templateName, customizePrompt) {
  * @param target 模板路径
  * @param fileName 读取文件名
  */
-function getCustomizePrompt (target, fileName) {
-  return new Promise ((resolve) => {
+function getCustomizePrompt(target, fileName) {
+  return new Promise((resolve) => {
     const filePath = path.join(process.cwd(), target, fileName)
-    if(fs.existsSync(filePath)) {
+    if (fs.existsSync(filePath)) {
       console.log('读取模板配置文件')
       let file = require(filePath)
       resolve(file)
@@ -251,15 +252,15 @@ function getCustomizePrompt (target, fileName) {
   })
 }
 // 删除模板配置文件
-function deleteCusomizePrompt (target) {
+function deleteCusomizePrompt(target) {
   // 自定义选项模板路径
   const cusomizePrompt = path.join(process.cwd(), target, CONST.CUSTOMIZE_PROMPT)
-    if(fs.existsSync(cusomizePrompt)) { 
-      rm(cusomizePrompt)
-    }
+  if (fs.existsSync(cusomizePrompt)) {
+    rm(cusomizePrompt)
+  }
   // 忽略文档路径
-  const fileIgnore =  path.join(process.cwd(), target, CONST.FILE_IGNORE)
-  if(fs.existsSync(fileIgnore)) { 
+  const fileIgnore = path.join(process.cwd(), target, CONST.FILE_IGNORE)
+  if (fs.existsSync(fileIgnore)) {
     rm(fileIgnore)
   }
 }
@@ -270,9 +271,9 @@ function afterBuild() {
   log.succes("创建成功:)")
 }
 
-function afterError (rootName) {
+function afterError(rootName) {
   console.log(rootName)
-  if(rootName) {
+  if (rootName) {
     rm(rootName)
     rm(CONST.TEMPLATE_NAME)
   }

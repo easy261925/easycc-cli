@@ -1,18 +1,19 @@
 {
+  "antd4": {
+    "name": "ant-design-pro-ant-4",
+    "value": "antd4",
+    "git": "https://github.com/easy261925/ant-design-pro-ant-4.git",
+    "options": []
+  },
   "antd3": {
-    "name": "antd-design-pro-v2项目",
+    "name": "ant-design-pro-ant-3",
     "value": "antd3",
     "git": "https://github.com/easy261925/cc-antd-design-pro.git",
     "options": []
   },
-  "spring-cloud": {
-    "name": "spring-cloud项目",
-    "value": "spring-cloud",
-    "git": "https://github.com/easy261925/spring_cloud.git"
-  },
-  "lib1": {
-    "name": "lib1项目",
-    "value": "lib1",
-    "git": "https://gitee.com/WanShiRuYi/lib1.git"
+  "SpringCloud": {
+    "name": "SpringCloud",
+    "value": "SpringCloud",
+    "git": "https://github.com/easy261925/SpringCloud.git"
   }
 }
