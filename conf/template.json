@@ -15,5 +15,11 @@
     "name": "SpringCloud",
     "value": "SpringCloud",
     "git": "https://github.com/easy261925/SpringCloud.git"
+  },
+  "antd-vue": {
+    "name": "ant-design-pro-vue",
+    "value": "antd-vue",
+    "git": "https://github.com/easy261925/ant-design-pro-vue.git",
+    "options": []
   }
 }
