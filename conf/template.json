@@ -21,5 +21,10 @@
     "value": "antd-vue",
     "git": "https://github.com/easy261925/ant-design-pro-vue.git",
     "options": []
+  },
+  "SpringBootOracle": {
+    "name": "SpringBootOracle",
+    "value": "SpringBootOracle",
+    "git": "https://github.com/easy261925/SpringBootOracle.git"
   }
 }
