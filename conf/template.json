@@ -1,4 +1,10 @@
 {
+  "ant-design-pro-5": {
+    "name": "ant-design-pro-5",
+    "value": "ant-design-pro-5",
+    "git": "https://github.com/easy261925/antd-pro5.git",
+    "options": []
+  },
   "ant-design-pro-spring-boot": {
     "name": "ant-design-pro-spring-boot",
     "value": "ant-design-pro-spring-boot",
