@@ -1,4 +1,22 @@
 {
+  "th-base-fe": {
+    "name": "th-base-fe",
+    "value": "th-base-fe",
+    "git": "https://gitee.com/asth/th-base-fe.git",
+    "options": []
+  },
+  "th-base-h5": {
+    "name": "th-base-h5",
+    "value": "th-base-h5",
+    "git": "https://gitee.com/asth/th-base-h5.git",
+    "options": []
+  },
+    "th-base-be": {
+      "name": "th-base-be",
+      "value": "th-base-be",
+      "git": "https://gitee.com/asth/th-base-be.git",
+      "options": []
+    },
   "ant-design-pro-5": {
     "name": "ant-design-pro-5",
     "value": "ant-design-pro-5",

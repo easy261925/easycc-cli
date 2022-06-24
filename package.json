@@ -1,6 +1,6 @@
 {
   "name": "easycc-cli",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "description": "easycc的脚手架",
   "main": "index.js",
   "scripts": {
